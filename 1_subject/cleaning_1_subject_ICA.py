@@ -47,6 +47,7 @@ score = ica.plot_scores(scores, exclude=eog_inds);  # look at r scores of compon
 # component got detected by our correlation analysis (red).
 score.savefig('/net/server/data/home/vtretyakova/Desktop/New_experiment/ica_score_L001_d1p1.jpeg')
 
+#Note in MNE 20.0 there is no exclude argument in ica.plot_sources
 sources = ica.plot_sources(eog_average, exclude=eog_inds);  # look at source time course
 sources.savefig('/net/server/data/home/vtretyakova/Desktop/New_experiment/ica_sources_L001_d1p1.jpeg')
 
