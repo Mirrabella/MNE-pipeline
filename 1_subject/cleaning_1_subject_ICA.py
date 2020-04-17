@@ -97,17 +97,17 @@ score_ecg.savefig('/net/server/data/home/vtretyakova/Desktop/New_experiment/ica_
 
 properties_ecg = ica.plot_properties(ecg_epochs, picks=ecg_inds, psd_args={'fmax': 35.});
 for id, p in enumerate(properties_ecg):
-  p.savefig('/net/server/data/home/vtretyakova/Desktop/New_experiment/ica_prop_ecg_{0}_L001_d1p1.jpeg'.format(id))
+  p.savefig('/home/........../Desktop/New_experiment/ica_prop_ecg_{0}_L001_d1p1.jpeg'.format(id))
   
 overlay_ecg = ica.plot_overlay(ecg_average, exclude=ecg_inds, show=False);
-overlay_ecg.savefig('/net/server/data/home/vtretyakova/Desktop/New_experiment/ica_overlay_ecg_L001_d1p1.jpeg')  
+overlay_ecg.savefig('/home/......../Desktop/New_experiment/ica_overlay_ecg_L001_d1p1.jpeg')  
   
-
-ica.exclude.extend(eog_inds)
+ica.exclude.extend(eog_inds_v) #or select components which we would like to delete
+ica.exclude.extend(eog_inds_h)
 ica.exclude.extend(ecg_inds)
 ica.save('/net/server/data/home/vtretyakova/Desktop/New_experiment/L001_d1p1-ica.fif')
 
-#ica = read_ica(op.join('/net/server/data/home/vtretyakova/Desktop/New_experiment', 'L005-ica.fif'))
+#ica = read_ica(op.join('/home/......../Desktop/New_experiment', 'L005-ica.fif'))
 raw_ica = raw.copy()
 ica.apply(raw_ica)
-raw_ica.save('/net/server/data/home/vtretyakova/Desktop/New_experiment/raw_ica_L001_d1p1.fif')
+raw_ica.save('/home/...../Desktop/New_experiment/raw_ica_L001_d1p1.fif')
